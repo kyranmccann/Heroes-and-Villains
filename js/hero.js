@@ -215,10 +215,11 @@ const player = new PlayerHero({
 
 document.getElementById('hero-fight').onclick = function(){
   let success = Math.floor(Math.random()*10);
-  if (success < 3){
+  if (success < 4){
       document.getElementById('message-area').innerHTML = opponent.attack(player);
   }
   else {
     document.getElementById('message-area').innerHTML = player.attack(opponent);
-  }
+  };
+
 }
