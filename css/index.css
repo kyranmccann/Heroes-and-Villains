@@ -31,10 +31,27 @@
   background-color: #87a1a6;
   cursor: pointer;
 }
-.secondaryButtonStyle a {
+.secondaryButtonStyle h4 {
   font-size: 2.4rem;
   font-weight: 600;
-  text-decoration: none;
+  color: #282828;
+}
+.tertiaryButtonStyle {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.tertiaryButtonStyle:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.tertiaryButtonStyle h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
   color: #282828;
 }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -264,10 +281,7 @@ p {
 .game-container h2 {
   border: 1px dashed black;
 }
-.game-container h3 {
-  border: 1px dashed black;
-}
-.game-container .fight {
+.game-container .character-action {
   width: 30%;
   border: 1px solid black;
   border-radius: 10px;
@@ -276,33 +290,13 @@ p {
   margin: 20px;
   padding: 10px;
 }
-.game-container .fight:hover {
+.game-container .character-action:hover {
   background-color: #87a1a6;
   cursor: pointer;
 }
-.game-container .fight a {
+.game-container .character-action h4 {
   font-size: 2.4rem;
   font-weight: 600;
-  text-decoration: none;
-  color: #282828;
-}
-.game-container .run {
-  width: 30%;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px;
-  background-color: #547980;
-  margin: 20px;
-  padding: 10px;
-}
-.game-container .run:hover {
-  background-color: #87a1a6;
-  cursor: pointer;
-}
-.game-container .run a {
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-decoration: none;
   color: #282828;
 }
 .game-container .fight-image {
@@ -311,13 +305,25 @@ p {
   height: 300px;
   padding: 20px;
 }
-.game-container h2 {
-  border: 1px dashed black;
+.game-container .start-fight {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
 }
-.game-container h3 {
-  border: 1px dashed black;
+.game-container .start-fight:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
 }
-.game-container .fight {
+.game-container .start-fight h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #282828;
+}
+.game-container .character-action {
   width: 30%;
   border: 1px solid black;
   border-radius: 10px;
@@ -326,32 +332,15 @@ p {
   margin: 20px;
   padding: 10px;
 }
-.game-container .fight:hover {
+.game-container .character-action:hover {
   background-color: #87a1a6;
   cursor: pointer;
 }
-.game-container .fight a {
+.game-container .character-action h4 {
   font-size: 2.4rem;
   font-weight: 600;
-  text-decoration: none;
   color: #282828;
 }
-.game-container .run {
-  width: 30%;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px;
-  background-color: #547980;
-  margin: 20px;
-  padding: 10px;
-}
-.game-container .run:hover {
-  background-color: #87a1a6;
-  cursor: pointer;
-}
-.game-container .run a {
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #282828;
+.game-container .hidden {
+  display: none;
 }

@@ -239,14 +239,16 @@ class CharacterStats extends GameObject{
  });
 
 
+document.getElementById('villain-fight').onclick = function(){
+  let success = Math.floor(Math.random()*10);
+  if (success < 4){
+      document.getElementById('message-area').innerHTML = opponent.attack(player);
+  }
+  else {
+    document.getElementById('message-area').innerHTML = player.attack(opponent);
+  };
+};
 
- document.getElementById('hero-fight').onclick = function(){
-   let success = Math.floor(Math.random()*10);
-   if (success < 4){
-       document.getElementById('message-area').innerHTML = opponent.attack(player);
-   }
-   else {
-     document.getElementById('message-area').innerHTML = player.attack(opponent);
-   };
-
- }
+document.getElementById('villain-heal').onclick = function(){
+    document.getElementById('message-area').innerHTML = player.heal();
+};

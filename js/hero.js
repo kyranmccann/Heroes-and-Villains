@@ -221,5 +221,8 @@ document.getElementById('hero-fight').onclick = function(){
   else {
     document.getElementById('message-area').innerHTML = player.attack(opponent);
   };
+};
 
-}
+document.getElementById('hero-heal').onclick = function(){
+    document.getElementById('message-area').innerHTML = player.heal();
+};
