@@ -1,0 +1,57 @@
+// General Styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  font-family: 'Amatic SC', cursive;
+  color: @main-font-color;
+  background-color: @offwhite;
+}
+
+h2, h3, h4, h5, p {
+  font-family: 'Amatic SC', cursive;
+  color: @header-font-color;
+}
+h1{
+  font-family: 'Lora', serif;
+  color: @header-font-color;
+  font-size: 6rem;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+p {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.6rem;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.game-container {
+  background-color: @wild-sand;
+  max-width: 800px;
+  width: 80%;
+  height: 600px;
+  margin: 60px auto;
+  border: 2px dotted black;
+  padding: 20px;
+  .flex(center, flex-start);
+  text-align: center;
+}

@@ -1,0 +1,357 @@
+.mainButtonStyle {
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 5px #282828;
+  background-color: #547980;
+  margin: 20px;
+  padding: 20px;
+  text-decoration: none;
+}
+.mainButtonStyle:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.mainButtonStyle h1 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  text-decoration: none;
+  color: #282828;
+}
+.secondaryButtonStyle {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.secondaryButtonStyle:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.secondaryButtonStyle a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #282828;
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: 'Amatic SC', cursive;
+  color: #282828;
+  background-color: #f2f5f2;
+}
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: 'Amatic SC', cursive;
+  color: #22283A;
+}
+h1 {
+  font-family: 'Lora', serif;
+  color: #22283A;
+  font-size: 6rem;
+}
+h2 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+p {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.6rem;
+  line-height: 1.4;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.game-container {
+  background-color: #F6F6F6;
+  max-width: 800px;
+  width: 80%;
+  height: 600px;
+  margin: 60px auto;
+  border: 2px dotted black;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+.container .start {
+  width: 100%;
+  margin: 0, auto;
+  padding: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.container .start h1 {
+  margin: 40px;
+}
+.container .start .button {
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 5px #282828;
+  background-color: #547980;
+  margin: 20px;
+  padding: 20px;
+  text-decoration: none;
+}
+.container .start .button:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.container .start .button h1 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  text-decoration: none;
+  color: #282828;
+}
+.game-container .fight-image {
+  border: 1px dashed teal;
+  width: 90%;
+  height: 300px;
+  padding: 20px;
+}
+.game-container h2 {
+  border: 1px dashed black;
+}
+.game-container h3 {
+  border: 1px dashed black;
+}
+.game-container .fight {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .fight:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .fight a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #282828;
+}
+.game-container .run {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .run:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .run a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #282828;
+}
+.game-container .fight-image {
+  border: 1px dashed teal;
+  width: 90%;
+  height: 300px;
+  padding: 20px;
+}
+.game-container h2 {
+  border: 1px dashed black;
+}
+.game-container h3 {
+  border: 1px dashed black;
+}
+.game-container .fight {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .fight:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .fight a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #282828;
+}
+.game-container .run {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .run:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .run a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #282828;
+}
