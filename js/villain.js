@@ -246,6 +246,7 @@ document.getElementById('villain-fight').onclick = function(){
   }
   else {
     document.getElementById('message-area').innerHTML = player.attack(opponent);
+    document.getElementById('player-hp').innerHTML = player.hp;
   };
 };
 

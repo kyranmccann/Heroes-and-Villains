@@ -199,6 +199,7 @@ const player = new PlayerHero({
 function checkHP(){
   if (player.hp <= 0) {
     document.getElementById('message-area').innerHTML = `Well I guess today goes to ${opponent.name}. A soul-shattering monologue about the butterfly effect and innocent victims of violence lands directly on your psyche and you are destroyed. `;
+    document.getElementById('player-hp').innerHTML = player.hp;
     document.getElementById('start-over').innerHTML = `Start Over`;
     document.getElementById('restart-button').classList.remove('hidden');
     document.getElementById('hero-heal').classList.add('hidden');
@@ -223,6 +224,7 @@ document.getElementById('hero-fight').onclick = function(){
   }
   else {
     document.getElementById('message-area').innerHTML = player.attack(opponent);
+    document.getElementById('player-hp').innerHTML = player.hp;
   };
 };
 
