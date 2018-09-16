@@ -1,5 +1,6 @@
 .mainButtonStyle {
-  width: 30%;
+  width: 50%;
+  max-width: 250px;
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 2px 5px #282828;
@@ -37,7 +38,7 @@
   color: #282828;
 }
 .tertiaryButtonStyle {
-  width: 80%;
+  width: 90%;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 2px 2px;
@@ -53,6 +54,7 @@
   font-size: 2.4rem;
   font-weight: 600;
   color: #282828;
+  text-decoration: none;
 }
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -313,6 +315,31 @@ p {
     order: 1;
   }
 }
+.game-container .restart {
+  text-decoration: none;
+}
+.game-container .start-over {
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .start-over:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .start-over h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #282828;
+  text-decoration: none;
+}
+.game-container .hidden {
+  display: none;
+}
 .container .start {
   width: 100%;
   margin: 0, auto;
@@ -333,7 +360,8 @@ p {
   }
 }
 .container .start .button {
-  width: 30%;
+  width: 50%;
+  max-width: 250px;
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 2px 5px #282828;

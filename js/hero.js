@@ -89,7 +89,7 @@ attack(opponent) {
   }
   opponent.hp -= damageNum;
   if (opponent.hp <= 0) {
-    return `Well I guess today goes to the forces of evil. The attack lands and you are destroyed. `
+    return `Well I guess today goes to ${this.name}. A soul-shattering monologue about the butterfly effect and innocent victims of violence lands directly on your psyche and you are destroyed. `
   }
   let opponentAttackMessageOptions = [
     `${this.name} launches into an impassioned speech about personal autonomy and otological theory. ` + opponent.takeDamage() +  ` and lose ${damageNum} HP.`,
@@ -186,7 +186,24 @@ const player = new PlayerHero({
   level: 6,
 })
 
+function checkHP(){
+  if (player.hp <= 0) {
+    document.getElementById('message-area').innerHTML = `Well I guess today goes to ${opponent.name}. A soul-shattering monologue about the butterfly effect and innocent victims of violence lands directly on your psyche and you are destroyed. `;
+    document.getElementById('start-over').innerHTML = `Start Over`;
+    document.getElementById('restart-button').classList.remove('hidden');
+    document.getElementById('hero-heal').classList.add('hidden');
+    document.getElementById('hero-fight').classList.add('hidden');
+  }
+  if (opponent.hp <= 0){
+    document.getElementById('message-area').innerHTML = `You attack and kill ${opponent.name} with your ${this.equippedWeapon}. The irony is not lost on you.` + opponent.destroy();
+    document.getElementById('start-over').innerHTML = `Start Over`;
+    document.getElementById('restart-button').classList.remove('hidden');
+    document.getElementById('hero-heal').classList.add('hidden');
+    document.getElementById('hero-fight').classList.add('hidden');
+  }
+}
 
+window.setInterval(checkHP, 1000);
 
 document.getElementById('hero-fight').onclick = function(){
   let success = Math.floor(Math.random()*10);

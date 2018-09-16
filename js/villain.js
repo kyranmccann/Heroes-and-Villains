@@ -210,7 +210,24 @@ class CharacterStats extends GameObject{
    level: 5,
  });
 
+function checkHP(){
+  if (player.hp <= 0) {
+    document.getElementById('message-area').innerHTML = `${opponent.name} burns away your shroud of delusion. You realize your antics would not be out of place in a cartoon about a moose and squirrel. You abandon your zany schemes in favor of learning taxidermy. ` + opponent.destroy();
+    document.getElementById('start-over').innerHTML = `Start Over`;
+    document.getElementById('restart-button').classList.remove('hidden');
+    document.getElementById('villain-heal').classList.add('hidden');
+    document.getElementById('villain-fight').classList.add('hidden');
+  }
+  if (opponent.hp <= 0){
+    document.getElementById('message-area').innerHTML = `You manage to capture ${opponent.name} and put it in a tiny, metaphorical box. On a forgotten, metaphorical shelf. Where it can't do any harm to your grandiose and convoluted plans for local government. ` + opponent.destroy();
+    document.getElementById('start-over').innerHTML = `Start Over`;
+    document.getElementById('restart-button').classList.remove('hidden');
+    document.getElementById('villain-heal').classList.add('hidden');
+    document.getElementById('villain-fight').classList.add('hidden');
+  }
+}
 
+window.setInterval(checkHP, 1000);
 
 document.getElementById('villain-fight').onclick = function(){
   let success = Math.floor(Math.random()*10);
