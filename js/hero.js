@@ -195,7 +195,7 @@ function checkHP(){
     document.getElementById('hero-fight').classList.add('hidden');
   }
   if (opponent.hp <= 0){
-    document.getElementById('message-area').innerHTML = `You attack and kill ${opponent.name} with your ${this.equippedWeapon}. The irony is not lost on you.` + opponent.destroy();
+    document.getElementById('message-area').innerHTML = `You attack and kill ${opponent.name} with your ${player.equippedWeapon}. The irony is not lost on you.` + opponent.destroy();
     document.getElementById('start-over').innerHTML = `Start Over`;
     document.getElementById('restart-button').classList.remove('hidden');
     document.getElementById('hero-heal').classList.add('hidden');

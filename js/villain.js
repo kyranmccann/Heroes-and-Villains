@@ -100,7 +100,7 @@ class CharacterStats extends GameObject{
 
    let genericHeroAttackMessages = [
      `${this.name} tells you that you are doing that thing again. It cuts deep. You lose ${damageNum} HP.`,
-     `${this.name} constructs a particularly well thought out analogy that illustrates you as the jerk in this story. You ` + opponent.takeDamage() + ` and lost ${damageNum} HP.`,
+     `${this.name} constructs a particularly well thought out analogy that illustrates you as the jerk in this story. ` + opponent.takeDamage() + ` and lose ${damageNum} HP.`,
      `${this.name} draws a Venn diagram comparing your master plan with a Bond villain. You `+ opponent.takeDamage() + ` and lose ${damageNum} HP.`,
      `${this.name} files a scathing review of your previous plans. You lose ${damageNum} HP.`,
      `${this.name} blinds you with the realization that you have lived too long. Where once you were the hero, now you have become the villain. You begin to consider retirement.`
@@ -152,9 +152,9 @@ class CharacterStats extends GameObject{
    this.potions -= 1;
    this.hp += healNum;
    let healMessageOptions = [
-     `The healing potion is bitter, and you remember how the townsfolk laughed at your invention that one time. Well you'll show them! Your relove to do violence in increased and you gain ${healNum} HP and are now at ${this.hp} HP.`,
+     `The healing potion is bitter, and you remember how the townsfolk laughed at your invention that one time. Well you'll show them! Your relove to do violence in increased and you gain ${healNum} HP`,
      `The healing potion's salty taste reminds you of how children laughed when you tried to bring capes back into fashion. Your resolve is bolstered by ${this.hp} HP.`,
-     `The bitter potion brings to mind the time the council called your proposed policy revisions ineffectual and confusing. You can't possibly be the villain! You recover ${healNum} HP and are now at ${this.hp} HP.`
+     `The bitter potion brings to mind the time the council called your proposed policy revisions ineffectual and confusing. You can't possibly be the villain! You recover ${healNum} HP.`
    ]
   return healMessageOptions[Math.floor(Math.random()*healMessageOptions.length)];
  } //end heal
@@ -168,7 +168,7 @@ class CharacterStats extends GameObject{
    let damageNum = Math.floor(Math.random() * this.level);
    if (damageNum === 0) {
      this.hp -= 1;
-     return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead. -1 HP. Great job. You're now at ${this.hp} HP.`;
+     return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead. -1 HP. Great job.`;
    }
    opponent.hp -= damageNum;
    if (opponent.hp <= 0) {
