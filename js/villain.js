@@ -163,19 +163,13 @@ class CharacterStats extends GameObject{
    }
    this.salves -= 1;
    this.hp += healNum;
-   return `${this.name} used an abnormally bitter healing salve and it really got the evil blood pumping again! ${healNum} HP restored and ${this.pronouns[0]} ${this.pronouns[3]} now at ${this.hp} HP. `;
+   let healMessageOptions = [
+     `You remember that jerk from the taco line, and your motivation to commit violence bolstered. You gain ${healNum} HP and are now at ${this.hp} HP.`,
+     `The healing potion is sweet, and you remember how soft kittens are and the warm and fuzzies heal your soul. You are now at ${this.hp} HP.`,
+   ]
+  return healMessageOptions[Math.floor(Math.random()*messageOptions.length)];
  } //end heal
  attack(opponent) {
-   // if (opponent.name === this.name) {
-   //   if (this.hp <= 0) {
-   //     return `Hey ${this.name}, I hate to have to remind you of this (because you kind of scare me), but you're dead and you can't attack anyone when you're dead. Not even yourself.`;
-   //   }
-   //   this.hp -= 1;
-   //   if (this.hp <= 0) {
-   //     return `Wooooooow, ${this.name}. You just managed to drop your ${this.equippedWeapon} on your foot, killing yourself.` + this.destroy() + `.`;
-   //   }
-   //   return `Did... did you just try to attack yourself, ${this.name}? Fine. You dropped your ${this.equippedWeapon} on your foot and lost 1 HP. You are now at ${this.hp} HP.`;
-   // }
    if (this.hp <= 0) {
      return `Uhhhhhh? You died. You can't attack anyone. Because you're dead. This isn't a zombie game.`;
    }
@@ -194,23 +188,6 @@ class CharacterStats extends GameObject{
    return `${this.name} ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} hurl ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]} ${this.equippedWeapon} at ${opponent.name} for a possible ${damageNum} HP damage. ` + opponent.genericTakeDamage() + ` and is now at ${opponent.hp} HP.`;
  }; //attack
 
-//  if (this.hp <= 0) {
-//     document.getElementById('message-area').innerHTML = `Uhhhhhh? You died. You can't attack anyone. Because you're dead. This isn't a zombie game.`; ;
-//  }
-//  if (opponent.hp <= 0) {
-//    return `Hey, ${opponent.name} is already out of the game. You won. Stop beating a dead horse. Go back to your evil lair and do something evil.`;
-//  }
-//  let damageNum = Math.floor(Math.random() * this.level);
-//  if (damageNum === 0) {
-//    this.hp -= 1;
-//    return `${this.name} ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]}  ${this.equippedWeapon} but missed. You dropped it on your foot instead. -1 HP. Great job. You're now at ${this.hp} HP.`;
-//  }
-//  opponent.hp -= damageNum;
-//  if (opponent.hp <= 0) {
-//    return `Well I guess today goes to the forces of evil. The attack lands and decimates the hero. ` + opponent.destroy();
-//  }
-//  return `${this.name} ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} hurl ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]} ${this.equippedWeapon} at ${opponent.name} for a possible ${damageNum} HP damage. ` + opponent.genericTakeDamage() + ` and is now at ${opponent.hp} HP.`;
-// }; //attack
  }
 
    const opponent = new GenericHero({
