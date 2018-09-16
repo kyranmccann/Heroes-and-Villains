@@ -239,7 +239,7 @@ p {
 }
 @media ( max-width: 400px ) {
   .game-container {
-    margin: 5%;
+    margin: 5%, auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
