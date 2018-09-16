@@ -89,7 +89,7 @@ attack(opponent) {
   let opponentAttackMessageOptions = [
     `${this.name} launches into an impassioned speech about personal autonomy and otological theory. ` + opponent.takeDamage() +  ` and are now at ${opponent.hp} HP.`,
     `${this.name} reminds you of all the problems inherent in controlling feral cat populations. ` + opponent.takeDamage() +  ` and are now at ${opponent.hp} HP.`,
-    `${this.name} tells you to calm down. You're upset for perfectly understandable reasons, and being told to calm down just makes you lose it for some reason. You lose ${damageNum} HP and are now at ${opponent.hp} HP.`,
+    `${this.name} tells you to calm down. You're upset for perfectly understandable reasons, and being told to calm down just makes you lose it. You lose ${damageNum} HP and are now at ${opponent.hp} HP.`,
   ]
   return  opponentAttackMessageOptions[Math.floor(Math.random()*opponentAttackMessageOptions.length)]
 }; //generic villain attack
@@ -162,7 +162,7 @@ attack(opponent) {
 const opponent = new GenericVillain({
   createdAt: new Date(),
   hp: 20,
-  name: 'Moral Dilemma of Violence',
+  name: 'The Moral Dilemma of Violence',
   weapons: [
     'a lengthy speech',
     'your memories of past indescretions',
@@ -173,9 +173,9 @@ const opponent = new GenericVillain({
 const player = new PlayerHero({
   createdAt: new Date(),
   hp: 20,
-  name: 'Snow White',
+  name: 'You',
   weapons: [
-    'attack dwarf',
+    'sword',
     'frying pan',
   ],
   level: 6,
