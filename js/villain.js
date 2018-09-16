@@ -100,7 +100,7 @@ class CharacterStats extends GameObject{
 
    let genericHeroAttackMessages = [
      `${this.name} tells you that you are doing that thing again. It cuts deep. You lose ${damageNum} HP.`,
-     `${this.name} constructs a particularly well thought out analogy that illustrates you as the jerk in this story. You ` + this.takeDamage() + ` and lost ${damageNum} HP.`,
+     `${this.name} constructs a particularly well thought out analogy that illustrates you as the jerk in this story. You ` + opponent.takeDamage() + ` and lost ${damageNum} HP.`,
      `${this.name} draws a Venn diagram comparing your master plan with a Bond villain. You `+ opponent.takeDamage() + ` and lose ${damageNum} HP.`,
      `${this.name} files a scathing review of your previous plans. You lose ${damageNum} HP.`,
      `${this.name} blinds you with the realization that you have lived too long. Where once you were the hero, now you have become the villain. You begin to consider retirement.`
@@ -168,17 +168,20 @@ class CharacterStats extends GameObject{
    let damageNum = Math.floor(Math.random() * this.level);
    if (damageNum === 0) {
      this.hp -= 1;
-     return `${this.name} ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]}  ${this.equippedWeapon} but missed. You dropped it on your foot instead. -1 HP. Great job. You're now at ${this.hp} HP.`;
+     return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead. -1 HP. Great job. You're now at ${this.hp} HP.`;
    }
    opponent.hp -= damageNum;
    if (opponent.hp <= 0) {
       return `You manage to capture ${opponent.name} and put it in a tiny, metaphorical box. On a forgotten, metaphorical shelf. Where it can't do any harm to your grandious and convoluted plans for local government. ` + opponent.destroy();
    }
 
-   return `${this.name} hurl ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]} ${this.equippedWeapon} at ${opponent.name} for a possible ${damageNum} HP damage. ` + opponent.genericTakeDamage() + `.`;
+   return `You hurl your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} at ${opponent.name}. ` + opponent.genericTakeDamage() + `.`;
+   if ((opponent.hp < 5) && (opponent.potions > 0)){
+     opponent.heal();
+   }
  }; //attack
 
- }
+};
 
    const opponent = new GenericHero({
    createdAt: new Date(),
@@ -186,7 +189,7 @@ class CharacterStats extends GameObject{
    name: 'Self Awareness',
    weapons: [
      'mirror',
-     'frying pan',
+
    ],
    level: 6,
  });
@@ -199,8 +202,10 @@ class CharacterStats extends GameObject{
    hp: 20,
    name: 'You',
    weapons: [
-     'poison apple',
-     'that creepy mirror',
+     'poison decoder ring',
+     'foldable dagger from the town flea market',
+     `rabid flying monkey sidekick`,
+     `sheer sense of self-denial`,
    ],
    level: 5,
  });

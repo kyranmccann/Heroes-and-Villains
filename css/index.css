@@ -234,12 +234,12 @@ p {
   background-color: #F6F6F6;
 }
 .game-container {
-  background-color: #f2f5f2;
+  background-color: #F6F6F6;
   max-width: 800px;
-  width: 90%;
-  height: 80%;
-  margin: 3% auto;
   border: 2px dotted black;
+  width: 90%;
+  min-height: 525px;
+  margin: auto;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -256,7 +256,6 @@ p {
     align-items: center;
     flex-direction: column;
     padding: 5px;
-    min-height: 600px;
   }
 }
 .game-container .fight-image img {

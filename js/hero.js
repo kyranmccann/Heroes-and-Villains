@@ -79,16 +79,22 @@ class GenericVillain extends Humanoid{
 attack(opponent) {
   let damageNum = Math.floor(Math.random() * this.level);
   if (damageNum === 0) {
-    return `${this.name} ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with ${this.pronouns[1]} ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]}  ${this.equippedWeapon} but missed.`;
+    let genericVillainMissedAttackMessages = [
+      `${this.name} attempts to attack you with its ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but misses.`,
+      `${this.name} starts to take a step toward you but sees a tiny bug in its path and doesn't want to hurt it.`,
+      `${this.name} moves like it's going to attack but its phone rings.`,
+      `${this.name} takes a swing at you but just ends up hitting itself like a cartoon.`
+    ]
+    return genericVillainMissedAttackMessages[Math.floor(Math.random()*genericVillainMissedAttackMessages.length)];
   }
   opponent.hp -= damageNum;
   if (opponent.hp <= 0) {
-    return `Well I guess today goes to the forces of evil. The attack lands and decimates the hero. ` + opponent.destroy();
+    return `Well I guess today goes to the forces of evil. The attack lands and you are destroyed. `
   }
   let opponentAttackMessageOptions = [
-    `${this.name} launches into an impassioned speech about personal autonomy and otological theory. ` + opponent.takeDamage() +  ` and are now at ${opponent.hp} HP.`,
-    `${this.name} reminds you of all the problems inherent in controlling feral cat populations. ` + opponent.takeDamage() +  ` and are now at ${opponent.hp} HP.`,
-    `${this.name} tells you to calm down. You're upset for perfectly understandable reasons, and being told to calm down just makes you lose it. You lose ${damageNum} HP and are now at ${opponent.hp} HP.`,
+    `${this.name} launches into an impassioned speech about personal autonomy and otological theory. ` + opponent.takeDamage() +  ` and lose ${damageNum} HP.`,
+    `${this.name} reminds you of all the problems inherent in controlling feral cat populations. ` + opponent.takeDamage() +  ` and it smarts to the tune of ${damageNum} HP.`,
+    `${this.name} tells you to calm down. You're upset for perfectly understandable reasons, and being told to calm down just makes you lose it. You lose ${damageNum} HP.`,
   ]
   return  opponentAttackMessageOptions[Math.floor(Math.random()*opponentAttackMessageOptions.length)]
 }; //generic villain attack
@@ -112,16 +118,10 @@ class PlayerHero extends Humanoid{
     'gallantly',
     'intrepedly',
   ];
-  this.adjectives = [
-    'light and fluffy',
-    'hearty',
-    'well-conditioned',
-    'wholesome',
-  ];
   }
   heal() {
   if (this.potions === 0) {
-    return `You remember those things from earlier, but they're foggy and don't do anything.`;
+    return `You still remember those things from earlier, but they're foggy and don't do anything.`;
   }
   let healNum = Math.floor(Math.random() * this.level);
   if (healNum === 0) {
@@ -130,8 +130,9 @@ class PlayerHero extends Humanoid{
   this.potions -= 1;
   this.hp += healNum;
   let healMessageOptions = [
-    `The healing potion reminds you of sweet summer nights with friends in simpler times. You are revived by ${healNum} HP and are now at ${this.hp} HP.`,
-    `The healing potion is sweet, and you remember how soft kittens are and the warm and fuzzies heal your soul. You are revived by ${healNum} HP and are now at ${this.hp} HP.`,
+    `The healing potion reminds you of sweet summer nights with friends in simpler times. You are revived by ${healNum} HP.`,
+    `The healing potion is sweet, and you remember how soft kittens are and the warm and fuzzies heal your soul. You are revived by ${healNum} HP.`,
+    `The smell of the potion floods your senses with memories of beach days with your puppy. You recover ${healNum} HP.`
   ]
   return healMessageOptions[Math.floor(Math.random()*healMessageOptions.length)];
 } //end player heal
@@ -145,13 +146,16 @@ attack(opponent) {
       let damageNum = Math.floor(Math.random() * this.level);
       if (damageNum === 0) {
         this.hp -= 1;
-        return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]} ${this.equippedWeapon} but missed. You dropped it on your foot instead for -1 HP. You are now at ${this.hp} HP.`;
+        return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead for -1 HP. Well done. You are now at ${this.hp} HP.`;
       }
       opponent.hp -= damageNum;
       if (opponent.hp <= 0) {
         return `You attack and kill ${opponent.name} with your ${this.equippedWeapon}. The irony is not lost on you.` + opponent.destroy();
       }
-      return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} throw your ${this.adjectives[Math.floor(Math.random()*this.adjectives.length)]} ${this.equippedWeapon} at ${opponent.name} for a possible maximum ${damageNum} HP damage. ` + opponent.genericTakeDamage() +`.`;
+      return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} throw your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} at your opponent. ` + opponent.genericTakeDamage() +`.`;
+      if ((opponent.hp < 5) && (opponent.potions > 0)){
+        opponent.heal(); 
+      }
     }; //end player successfull attack
 
 
@@ -163,8 +167,9 @@ const opponent = new GenericVillain({
   hp: 20,
   name: 'The Moral Dilemma of Violence',
   weapons: [
-    'a lengthy speech',
-    'your memories of past indescretions',
+    'lengthy speech',
+    'projection of your own violent memories',
+    `sassy protest signs`,
   ],
   level: 5,
 })
@@ -176,6 +181,7 @@ const player = new PlayerHero({
   weapons: [
     'sword',
     'frying pan',
+    `comically large axe`,
   ],
   level: 6,
 })
