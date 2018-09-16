@@ -4,7 +4,7 @@ class GameObject{
   this.dimensions = options.dimensions;
   }
   destroy() {
-  return `${this.name} has been vaquished.`
+  return `${this.name} has been vanquished.`
 }
 }
 
@@ -51,25 +51,24 @@ class GenericVillain extends Humanoid{
   constructor(gVillainOptions){
     super(gVillainOptions);
     this.equippedWeapon = this.weapons[0];
-    this.salves = 4;
+    this.potions = 4;
     this.pronouns = [
-    'she',
-    'her',
+    'it',
+    'its',
     'was',
     'is',
-    'her',
+    'it',
     ];
     this.adverbs = [
     'evilly',
     'wickedly',
     'spitefully',
     'villainously',
-    'meanly',
     'malevolently',
     'maliciously',
     ];
     this.adjectives = [
-    'evil',
+    'abiguous',
     'dark and stormy',
     'noxious',
     'mischievous',
@@ -101,7 +100,7 @@ class PlayerHero extends Humanoid{
    this.name = 'You';
   this.level = 5;
   this.equippedWeapon = this.weapons[0];
-  this.salves = 4;
+  this.potions = 4;
   this.adverbs = [
     'heroically',
     'bravely',
@@ -121,14 +120,14 @@ class PlayerHero extends Humanoid{
   ];
   }
   heal() {
-  if (this.salves === 0) {
+  if (this.potions === 0) {
     return `You remember those things from earlier, but they're foggy and don't do anything.`;
   }
   let healNum = Math.floor(Math.random() * this.level);
   if (healNum === 0) {
     return `Oops, you can't get the top off of the healing salve bottle. Darn childproof tops. But child safety is important so you'll just try again later when feeling stronger than a child.`;
   }
-  this.salves -= 1;
+  this.potions -= 1;
   this.hp += healNum;
   let healMessageOptions = [
     `The healing potion reminds you of sweet summer nights with friends in simpler times. You are revived by ${healNum} HP and are now at ${this.hp} HP.`,
@@ -185,8 +184,9 @@ const player = new PlayerHero({
 
 document.getElementById('hero-fight').onclick = function(){
   let success = Math.floor(Math.random()*10);
-  if (success < 4){
+  if (success < 5){
       document.getElementById('message-area').innerHTML = opponent.attack(player);
+      document.getElementById('player-hp').innerHTML = player.hp;
   }
   else {
     document.getElementById('message-area').innerHTML = player.attack(opponent);
@@ -195,4 +195,6 @@ document.getElementById('hero-fight').onclick = function(){
 
 document.getElementById('hero-heal').onclick = function(){
     document.getElementById('message-area').innerHTML = player.heal();
+    document.getElementById('player-hp').innerHTML = player.hp;
+    document.getElementById('player-potions').innerHTML = player.potions;
 };

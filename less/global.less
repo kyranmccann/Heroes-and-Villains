@@ -10,7 +10,7 @@ html {
 html, body {
   font-family: 'Amatic SC', cursive;
   color: @main-font-color;
-  background-color: @offwhite;
+  background-color: @wild-sand;
 }
 
 h2, h3, h4, h5, p {
@@ -42,13 +42,25 @@ p {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+
+  .player-data{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: @wild-sand;
+
+  }
 }
 
 .game-container {
-  background-color: @wild-sand;
+  background-color: @offwhite;
   max-width: 800px;
-  width: 80%;
-  margin: 10% auto;
+  width: 90%;
+  height: 80%;
+  margin: 3% auto;
   border: 2px dotted black;
   padding: 20px;
   .flex(center, flex-start);
@@ -58,16 +70,24 @@ p {
     margin: 1%, auto;
     .flex(center, center);
     flex-direction: column;
+    padding: 5px;
+    min-height: 600px;
   }
   .fight-image{
     img{
-      width: 60%;
-      height: auto;
+      width: 40%;
+      height: 90%;
       padding: 10px;
+      @media @phone {
+        width: 50%;
+        height: auto;
+        padding: 0px;
+        margin-top: 0px;
+      }
     }
   }
   h3{
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-weight: 650;
   }
   .character-action {

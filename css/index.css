@@ -192,7 +192,7 @@ html,
 body {
   font-family: 'Amatic SC', cursive;
   color: #282828;
-  background-color: #f2f5f2;
+  background-color: #F6F6F6;
 }
 h2,
 h3,
@@ -224,11 +224,21 @@ p {
   width: 100%;
   margin: 0 auto;
 }
-.game-container {
-  background-color: #F6F6F6;
+.container .player-data {
   max-width: 800px;
-  width: 80%;
-  margin: 10% auto;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #F6F6F6;
+}
+.game-container {
+  background-color: #f2f5f2;
+  max-width: 800px;
+  width: 90%;
+  height: 80%;
+  margin: 3% auto;
   border: 2px dotted black;
   padding: 20px;
   display: flex;
@@ -245,15 +255,25 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 5px;
+    min-height: 600px;
   }
 }
 .game-container .fight-image img {
-  width: 60%;
-  height: auto;
+  width: 40%;
+  height: 90%;
   padding: 10px;
 }
+@media ( max-width: 400px ) {
+  .game-container .fight-image img {
+    width: 50%;
+    height: auto;
+    padding: 0px;
+    margin-top: 0px;
+  }
+}
 .game-container h3 {
-  font-size: 3.6rem;
+  font-size: 3rem;
   font-weight: 650;
 }
 .game-container .character-action {
