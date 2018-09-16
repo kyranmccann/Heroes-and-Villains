@@ -172,7 +172,7 @@ class CharacterStats extends GameObject{
    }
    opponent.hp -= damageNum;
    if (opponent.hp <= 0) {
-      return `You manage to capture ${opponent.name} and put it in a tiny, metaphorical box. On a forgotten, metaphorical shelf. Where it can't do any harm to your grandious and convoluted plans for local government. ` + opponent.destroy();
+      return `You manage to capture ${opponent.name} and put it in a tiny, metaphorical box. On a forgotten, metaphorical shelf. Where it can't do any harm to your grandiose and convoluted plans for local government. ` + opponent.destroy();
    }
 
    return `You hurl your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} at ${opponent.name}. ` + opponent.genericTakeDamage() + `.`;

@@ -154,7 +154,7 @@ attack(opponent) {
       }
       return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} throw your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} at your opponent. ` + opponent.genericTakeDamage() +`.`;
       if ((opponent.hp < 5) && (opponent.potions > 0)){
-        opponent.heal(); 
+        opponent.heal();
       }
     }; //end player successfull attack
 
@@ -171,7 +171,7 @@ const opponent = new GenericVillain({
     'projection of your own violent memories',
     `sassy protest signs`,
   ],
-  level: 5,
+  level: 7,
 })
 
 const player = new PlayerHero({
