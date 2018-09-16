@@ -6,12 +6,21 @@
     .flex(space-around, center);
     flex-direction: column;
     text-align: center;
+
     h1{
       margin: 40px;
+
+      @media @phone {
+        font-size: 4rem;
+      }
 
     }
     .button {
       .mainButtonStyle;
+
+      @media @phone {
+        width: 80%; 
+      }
 
     }
 

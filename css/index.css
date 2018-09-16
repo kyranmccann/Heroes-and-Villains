@@ -228,7 +228,6 @@ p {
   background-color: #F6F6F6;
   max-width: 800px;
   width: 80%;
-  height: 600px;
   margin: 60px auto;
   border: 2px dotted black;
   padding: 20px;
@@ -238,14 +237,23 @@ p {
   align-items: flex-start;
   text-align: center;
 }
-.game-container .fight-image {
-  border: 1px dashed teal;
-  width: 90%;
-  height: 300px;
-  padding: 20px;
+@media ( max-width: 400px ) {
+  .game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
-.game-container h2 {
-  border: 1px dashed black;
+.game-container .fight-image img {
+  width: 60%;
+  height: auto;
+  padding: 10px;
+}
+.game-container h3 {
+  font-size: 2.6rem;
+  font-weight: 800;
 }
 .game-container .character-action {
   width: 30%;
@@ -255,6 +263,7 @@ p {
   background-color: #547980;
   margin: 20px;
   padding: 10px;
+  align-self: flex-end;
 }
 .game-container .character-action:hover {
   background-color: #87a1a6;
@@ -264,6 +273,18 @@ p {
   font-size: 2.4rem;
   font-weight: 600;
   color: #282828;
+}
+@media ( max-width: 400px ) {
+  .game-container .character-action {
+    align-self: center;
+    width: 80%;
+    margin: 10px;
+  }
+}
+@media ( max-width: 400px ) {
+  .game-container .heal {
+    order: 1;
+  }
 }
 .container .start {
   width: 100%;
@@ -278,6 +299,11 @@ p {
 }
 .container .start h1 {
   margin: 40px;
+}
+@media ( max-width: 400px ) {
+  .container .start h1 {
+    font-size: 4rem;
+  }
 }
 .container .start .button {
   width: 30%;
@@ -298,4 +324,9 @@ p {
   font-size: 3rem;
   text-decoration: none;
   color: #282828;
+}
+@media ( max-width: 400px ) {
+  .container .start .button {
+    width: 80%;
+  }
 }
