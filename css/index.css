@@ -38,13 +38,13 @@
   color: #282828;
 }
 .tertiaryButtonStyle {
-  width: 90%;
+  width: 200px;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 2px 2px #282828;
   background-color: #547980;
   margin: 20px;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
 }
 .tertiaryButtonStyle:hover {
@@ -322,13 +322,13 @@ p {
   text-decoration: none;
 }
 .game-container .start-over {
-  width: 90%;
+  width: 200px;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 2px 2px #282828;
   background-color: #547980;
   margin: 20px;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
 }
 .game-container .start-over:hover {
