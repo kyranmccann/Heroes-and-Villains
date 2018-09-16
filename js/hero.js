@@ -76,6 +76,16 @@ class GenericVillain extends Humanoid{
     'pestiferous',
     ]
   }
+  heal(){
+    let healNum = Math.floor(Math.random() * this.level);
+    if (healNum === 0) {
+      return
+    }
+    else {
+      this.potions -= 1;
+      this.hp += healNum;
+    }
+  }
 attack(opponent) {
   let damageNum = Math.floor(Math.random() * this.level);
   if (damageNum === 0) {

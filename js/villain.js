@@ -80,7 +80,16 @@ class CharacterStats extends GameObject{
      'it',
      ];
    }
-
+   heal(){
+     let healNum = Math.floor(Math.random() * this.level);
+     if (healNum === 0) {
+       return
+     }
+     else {
+       this.potions -= 1;
+       this.hp += healNum;
+     }
+   }
  attack(opponent) {
    let damageNum = Math.floor(Math.random() * this.level);
    if (damageNum === 0) {
@@ -153,18 +162,18 @@ class CharacterStats extends GameObject{
    this.hp += healNum;
    let healMessageOptions = [
      `The healing potion is bitter, and you remember how the townsfolk laughed at your invention that one time. Well you'll show them! Your relove to do violence in increased and you gain ${healNum} HP`,
-     `The healing potion's salty taste reminds you of how children laughed when you tried to bring capes back into fashion. Your resolve is bolstered by ${this.hp} HP.`,
+     `The healing potion's salty taste reminds you of how children laughed when you tried to bring capes back into fashion. Your resolve is bolstered by ${healNum} HP.`,
      `The bitter potion brings to mind the time the council called your proposed policy revisions ineffectual and confusing. You can't possibly be the villain! You recover ${healNum} HP.`
    ]
   return healMessageOptions[Math.floor(Math.random()*healMessageOptions.length)];
  } //end heal
  attack(opponent) {
-   if (this.hp <= 0) {
-     return `Uhhhhhh? You died. You can't attack anyone. Because you're dead. This isn't a zombie game.`;
-   }
-   if (opponent.hp <= 0) {
-     return `Hey, ${opponent.name} is already out of the game. You won. Stop beating a dead horse. Go back to your evil lair and do something evil.`;
-   }
+   // if (this.hp <= 0) {
+   //   return `Uhhhhhh? You died. You can't attack anyone. Because you're dead. This isn't a zombie game.`;
+   // }
+   // if (opponent.hp <= 0) {
+   //   return `Hey, ${opponent.name} is already out of the game. You won. Stop beating a dead horse. Go back to your evil lair and do something evil.`;
+   // }
    let damageNum = Math.floor(Math.random() * this.level);
    if (damageNum === 0) {
      this.hp -= 1;
