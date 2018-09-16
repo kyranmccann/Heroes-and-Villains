@@ -156,7 +156,7 @@ attack(opponent) {
       let damageNum = Math.floor(Math.random() * this.level);
       if (damageNum === 0) {
         this.hp -= 1;
-        return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead for -1 HP. Well done. You are now at ${this.hp} HP.`;
+        return `You ${this.adverbs[Math.floor(Math.random()*this.adverbs.length)]} tried to attack with your ${this.weapons[Math.floor(Math.random()*this.weapons.length)]} but missed. You dropped it on your foot instead for -1 HP. Well done.`;
       }
       opponent.hp -= damageNum;
       if (opponent.hp <= 0) {
