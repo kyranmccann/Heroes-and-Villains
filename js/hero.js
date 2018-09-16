@@ -134,7 +134,7 @@ class PlayerHero extends Humanoid{
     `The healing potion reminds you of sweet summer nights with friends in simpler times. You are revived by ${healNum} HP and are now at ${this.hp} HP.`,
     `The healing potion is sweet, and you remember how soft kittens are and the warm and fuzzies heal your soul. You are revived by ${healNum} HP and are now at ${this.hp} HP.`,
   ]
-  return healMessageOptions[Math.floor(Math.random()*messageOptions.length)];
+  return healMessageOptions[Math.floor(Math.random()*healMessageOptions.length)];
 } //end player heal
 attack(opponent) {
       if (this.hp <= 0) {

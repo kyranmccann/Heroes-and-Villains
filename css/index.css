@@ -238,6 +238,33 @@ p {
   align-items: flex-start;
   text-align: center;
 }
+.game-container .fight-image {
+  border: 1px dashed teal;
+  width: 90%;
+  height: 300px;
+  padding: 20px;
+}
+.game-container h2 {
+  border: 1px dashed black;
+}
+.game-container .character-action {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  background-color: #547980;
+  margin: 20px;
+  padding: 10px;
+}
+.game-container .character-action:hover {
+  background-color: #87a1a6;
+  cursor: pointer;
+}
+.game-container .character-action h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #282828;
+}
 .container .start {
   width: 100%;
   margin: 0, auto;
@@ -271,76 +298,4 @@ p {
   font-size: 3rem;
   text-decoration: none;
   color: #282828;
-}
-.game-container .fight-image {
-  border: 1px dashed teal;
-  width: 90%;
-  height: 300px;
-  padding: 20px;
-}
-.game-container h2 {
-  border: 1px dashed black;
-}
-.game-container .character-action {
-  width: 30%;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px;
-  background-color: #547980;
-  margin: 20px;
-  padding: 10px;
-}
-.game-container .character-action:hover {
-  background-color: #87a1a6;
-  cursor: pointer;
-}
-.game-container .character-action h4 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #282828;
-}
-.game-container .fight-image {
-  border: 1px dashed teal;
-  width: 90%;
-  height: 300px;
-  padding: 20px;
-}
-.game-container .start-fight {
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px;
-  background-color: #547980;
-  margin: 20px;
-  padding: 10px;
-}
-.game-container .start-fight:hover {
-  background-color: #87a1a6;
-  cursor: pointer;
-}
-.game-container .start-fight h4 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #282828;
-}
-.game-container .character-action {
-  width: 30%;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px;
-  background-color: #547980;
-  margin: 20px;
-  padding: 10px;
-}
-.game-container .character-action:hover {
-  background-color: #87a1a6;
-  cursor: pointer;
-}
-.game-container .character-action h4 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #282828;
-}
-.game-container .hidden {
-  display: none;
 }
