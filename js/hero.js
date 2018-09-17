@@ -216,7 +216,8 @@ function checkHP(){
 
 window.setInterval(checkHP, 1000);
 
-document.getElementById('hero-fight').onclick = function(){
+
+document.getElementById('hero-fight').addEventListener('click', function(){
   let success = Math.floor(Math.random()*10);
   if (success < 5){
       document.getElementById('message-area').innerHTML = opponent.attack(player);
@@ -226,10 +227,11 @@ document.getElementById('hero-fight').onclick = function(){
     document.getElementById('message-area').innerHTML = player.attack(opponent);
     document.getElementById('player-hp').innerHTML = player.hp;
   };
-};
+});
 
-document.getElementById('hero-heal').onclick = function(){
+
+document.getElementById('hero-heal').addEventListener('click', function(){
     document.getElementById('message-area').innerHTML = player.heal();
     document.getElementById('player-hp').innerHTML = player.hp;
     document.getElementById('player-potions').innerHTML = player.potions;
-};
+});
