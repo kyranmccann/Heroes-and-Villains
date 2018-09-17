@@ -279,6 +279,11 @@ p {
   font-size: 3rem;
   font-weight: 650;
 }
+@media ( max-width: 400px ) {
+  .game-container h3 {
+    font-size: 2.6rem;
+  }
+}
 .game-container .character-action {
   width: 30%;
   border: 1px solid black;
