@@ -318,7 +318,6 @@ p {
   }
 }
 .game-container .restart {
-  align-self: flex-end;
   text-decoration: none;
 }
 .game-container .start-over {
@@ -341,7 +340,22 @@ p {
   color: #282828;
   text-decoration: none;
 }
-.game-container .hidden {
+@media ( max-width: 400px ) {
+  .game-container .start-over {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    align-self: center;
+  }
+  .game-container .start-over h4 {
+    text-decoration: none;
+    font-size: 3.6rem;
+  }
+  .game-container .start-over:hover {
+    background-color: #547980;
+  }
+}
+.hidden {
   display: none;
 }
 .container .start {
